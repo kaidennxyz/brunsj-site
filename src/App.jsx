@@ -848,6 +848,7 @@ export default function BrunsjBakeHouse() {
               <a href="https://www.instagram.com/__brunsj/" target="_blank" rel="noopener noreferrer" className="social-btn">📸</a>
               <a href="https://www.tiktok.com/@__brunsj" target="_blank" rel="noopener noreferrer" className="social-btn">🎵</a>
               <a href="https://maps.app.goo.gl/KigSETZQdP3QFUgA7" target="_blank" rel="noopener noreferrer" className="social-btn">📍</a>
+              <a href="https://maps.app.goo.gl/TqfVm8yce9MrcHN18" target="_blank" rel="noopener noreferrer" className="social-btn">📍</a>
             </div>
           </div>
           <div>
