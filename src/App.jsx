@@ -613,7 +613,7 @@ export default function BrunsjBakeHouse() {
             <li key={l}><a href="#" onClick={e => { e.preventDefault(); scrollTo(l.toLowerCase()); }}>{l}</a></li>
           ))}
         </ul>
-        <button className="nav-cta" onClick={() => scrollTo("visit")}>Find Us</button>
+        <button className="nav-cta" onClick={() => scrollTo("footer")}>Find Us</button>
       </nav>
 
       {/* HERO */}
