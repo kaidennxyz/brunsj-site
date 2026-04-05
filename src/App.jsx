@@ -839,7 +839,7 @@ export default function BrunsjBakeHouse() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer">
+      <footer className="footer" id="footer">
         <div className="footer-top">
           <div>
             <div className="footer-brand-name display">Brunsj <span>·</span> Bake House</div>
