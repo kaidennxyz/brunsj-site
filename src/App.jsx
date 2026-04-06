@@ -345,6 +345,30 @@ const style = `
     font-family: 'Playfair Display', serif; font-size: 22px;
     color: var(--gold);
   }
+  .menu-section-label {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .menu-section-label::before,
+  .menu-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+  .menu-section-label span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
   .menu-badge {
     padding: 4px 12px; border-radius: 100px;
     background: rgba(184,112,85,0.25); border: 1px solid rgba(184,112,85,0.4);
@@ -532,12 +556,12 @@ const style = `
 const menuData = {
   // ── CAKES ─────────────────────────────────────────────────
   cakes: [
-    { emoji: "🍰", name: "OG Burnt Cheesecake",           desc: "The classic that started it all — silky, caramelised, impossibly creamy basque.",              price: "Rp 65K", badge: "Signature"  },
-    { emoji: "🍫", name: "Choco Mousse BBC",               desc: "Half dark chocolate mousse, half burnt cheesecake — rich, luscious, never too sweet.",         price: "Rp 40K", badge: "Bestseller" },
-    { emoji: "🍒", name: "Blackforest Tiramisu",           desc: "Dark chocolate + espresso-soaked ladyfingers layered with mascarpone and sour cherries.",       price: "Rp 55K", badge: "New"        },
-    { emoji: "☕", name: "Tiramisu Cake",                  desc: "Creamy, not-too-sweet tiramisu served straight from the tray — coffee lovers' dream.",          price: "Rp 45K", badge: "Creamy"     },
-    { emoji: "🔥", name: "Crème Brûlée Burnt Cheesecake", desc: "Caramelised sugar crust meets our silky basque — a beautiful two-textured dessert.",            price: "Rp 65K", badge: "Classic"    },
-    { emoji: "🍮", name: "Molten Choco Mousse Tart",       desc: "Collab masterpiece — warm molten centre, chocolate mousse, crispy cheese tart shell.",         price: "Rp 72K", badge: "Limited"    },
+    { section: "Cheesecake";emoji: "🍰", name: "OG Burnt Cheesecake",           desc: "The classic that started it all — silky, caramelised, impossibly creamy basque.",              price: "Rp 65K", badge: "Signature"  },
+    { section: "Cheesecake";emoji: "🍫", name: "Choco Mousse BBC",               desc: "Half dark chocolate mousse, half burnt cheesecake — rich, luscious, never too sweet.",         price: "Rp 40K", badge: "Bestseller" },
+    { section: "Tiramisu";emoji: "🍒", name: "Blackforest Tiramisu",           desc: "Dark chocolate + espresso-soaked ladyfingers layered with mascarpone and sour cherries.",       price: "Rp 55K", badge: "New"        },
+    { section: "Tiramisu";emoji: "☕", name: "Tiramisu Cake",                  desc: "Creamy, not-too-sweet tiramisu served straight from the tray — coffee lovers' dream.",          price: "Rp 45K", badge: "Creamy"     },
+    { section: "Specials";emoji: "🔥", name: "Crème Brûlée Burnt Cheesecake", desc: "Caramelised sugar crust meets our silky basque — a beautiful two-textured dessert.",            price: "Rp 65K", badge: "Classic"    },
+    { section: "Specials";emoji: "🍮", name: "Molten Choco Mousse Tart",       desc: "Collab masterpiece — warm molten centre, chocolate mousse, crispy cheese tart shell.",         price: "Rp 72K", badge: "Limited"    },
   ],
 
   // ── PASTRIES ──────────────────────────────────────────────
@@ -728,17 +752,28 @@ export default function BrunsjBakeHouse() {
           ))}
         </div>
         <div className="menu-grid">
-          {menuData[activeTab].map((item, i) => (
-            <div key={i} className="menu-card fade-in">
-              <div className="menu-card-emoji">{item.emoji}</div>
-              <div className="menu-card-name display">{item.name}</div>
-              <div className="menu-card-desc">{item.desc}</div>
-              <div className="menu-card-footer">
-                <div className="menu-price display">{item.price}</div>
-                <div className="menu-badge">{item.badge}</div>
+          {menuData[activeTab].reduce((acc, item, i) => {
+            const prev = menuData[activeTab][i - 1];
+            if (!prev || prev.section !== item.section) {
+              acc.push(
+                <div key={`section-${item.section}`} className="menu-section-label">
+                  <span>{item.section}</span>
+                </div>
+              );
+            }
+            acc.push(
+              <div key={i} className="menu-card fade-in">
+                <div className="menu-card-emoji">{item.emoji}</div>
+                <div className="menu-card-name display">{item.name}</div>
+                <div className="menu-card-desc">{item.desc}</div>
+                <div className="menu-card-footer">
+                  <div className="menu-price display">{item.price}</div>
+                  <div className="menu-badge">{item.badge}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+            return acc;
+          }, [])}
         </div>
       </section>
 
