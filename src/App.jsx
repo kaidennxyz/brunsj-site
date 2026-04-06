@@ -556,12 +556,12 @@ const style = `
 const menuData = {
   // ── CAKES ─────────────────────────────────────────────────
   cakes: [
-    { section: "Cheesecake";emoji: "🍰", name: "OG Burnt Cheesecake",           desc: "The classic that started it all — silky, caramelised, impossibly creamy basque.",              price: "Rp 65K", badge: "Signature"  },
-    { section: "Cheesecake";emoji: "🍫", name: "Choco Mousse BBC",               desc: "Half dark chocolate mousse, half burnt cheesecake — rich, luscious, never too sweet.",         price: "Rp 40K", badge: "Bestseller" },
-    { section: "Tiramisu";emoji: "🍒", name: "Blackforest Tiramisu",           desc: "Dark chocolate + espresso-soaked ladyfingers layered with mascarpone and sour cherries.",       price: "Rp 55K", badge: "New"        },
-    { section: "Tiramisu";emoji: "☕", name: "Tiramisu Cake",                  desc: "Creamy, not-too-sweet tiramisu served straight from the tray — coffee lovers' dream.",          price: "Rp 45K", badge: "Creamy"     },
-    { section: "Specials";emoji: "🔥", name: "Crème Brûlée Burnt Cheesecake", desc: "Caramelised sugar crust meets our silky basque — a beautiful two-textured dessert.",            price: "Rp 65K", badge: "Classic"    },
-    { section: "Specials";emoji: "🍮", name: "Molten Choco Mousse Tart",       desc: "Collab masterpiece — warm molten centre, chocolate mousse, crispy cheese tart shell.",         price: "Rp 72K", badge: "Limited"    },
+    { section: "Cheesecake", emoji: "🍰", name: "OG Burnt Cheesecake",           desc: "The classic that started it all — silky, caramelised, impossibly creamy basque.",              price: "Rp 65K", badge: "Signature"  },
+    { section: "Cheesecake", emoji: "🍫", name: "Choco Mousse BBC",               desc: "Half dark chocolate mousse, half burnt cheesecake — rich, luscious, never too sweet.",         price: "Rp 40K", badge: "Bestseller" },
+    { section: "Tiramisu", emoji: "🍒", name: "Blackforest Tiramisu",           desc: "Dark chocolate + espresso-soaked ladyfingers layered with mascarpone and sour cherries.",       price: "Rp 55K", badge: "New"        },
+    { section: "Tiramisu", emoji: "☕", name: "Tiramisu Cake",                  desc: "Creamy, not-too-sweet tiramisu served straight from the tray — coffee lovers' dream.",          price: "Rp 45K", badge: "Creamy"     },
+    { section: "Specials", emoji: "🔥", name: "Crème Brûlée Burnt Cheesecake", desc: "Caramelised sugar crust meets our silky basque — a beautiful two-textured dessert.",            price: "Rp 65K", badge: "Classic"    },
+    { section: "Specials", emoji: "🍮", name: "Molten Choco Mousse Tart",       desc: "Collab masterpiece — warm molten centre, chocolate mousse, crispy cheese tart shell.",         price: "Rp 72K", badge: "Limited"    },
   ],
 
   // ── PASTRIES ──────────────────────────────────────────────
